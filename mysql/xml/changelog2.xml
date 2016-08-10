@@ -1,0 +1,25 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+<!-- create table if not exist -->
+<preConditions>
+    <dbms type="mysql" />
+    <runningAs username="root" />
+</preConditions>
+
+<changeSet author="afym" id="adding logs table">
+    <createTable catalogName="liqui_schema"
+            remarks="Log table for my system"
+            tableName="logs"
+            tablespace="A Description">
+        <column name="id" type="integer" primaryKey="true" unique="true" autoIncrement="true" remarks="primary key"/>
+        <column name="message" type="varchar(255)" remarks="register message" />
+        <column name="created" type="datetime" remarks="created date"/>
+    </createTable>
+</changeSet>
+
+</databaseChangeLog>
