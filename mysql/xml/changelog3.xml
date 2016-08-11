@@ -5,13 +5,13 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-<!-- create table if not exist -->
 <preConditions>
     <dbms type="mysql" />
     <runningAs username="root" />
 </preConditions>
 
 <changeSet author="afym" id="my-first-create-table">
+    <!-- add a precondition before create a new table -->
     <preConditions onFail="MARK_RAN">
         <not><tableExists tableName="logs" /></not>
     </preConditions>

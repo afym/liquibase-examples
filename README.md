@@ -37,3 +37,12 @@ DIR : E:/github/liquibase-examples/mysql
 > liquibase --changeLogFile=E:/github/liquibase-examples/mysql/xml/changelog.xml update
 
 ```
+
+#### Creating documentation
+```
+
+> liquibase --changeLogFile=E:/github/liquibase-examples/mysql/xml/changelog.xml dbDoc E:/docs/
+
+```
+
+### 
